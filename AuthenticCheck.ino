@@ -35,6 +35,14 @@ void loop()
     delay(100);
 }
 
+API_SCOPES="SPEECH,STTC,TTS"
+
+curl "https://api.att.com/oauth/v4/token" \
+    --insecure \
+    --header "Accept: application/json" \
+    --header "Content-Type: application/x-www-form-urlencoded" \
+    --data "client_id=${APP_KEY}&client_secret=${APP_SECRET}&grant_type=client_credentials&scope=${API_SCOPES}"
+
 /*********************************************************************************************************
   END FILE
 *********************************************************************************************************/
